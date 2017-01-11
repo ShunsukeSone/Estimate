@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
+
+@*ユーザー情報*@
+@Html.Partial("UserBlock")
+
+@*見積もり*@
+@Html.Partial("EstimateBlock")
+
+@*仕入れ先*@
+@using (Html.BeginForm("Supplier", "Top", FormMethod.Post))
+{
+    <div class=""><input type="submit" value="仕入れ先" id="" name="" /></div>
+    <div class="cls"></div>
+}
+
+@*発注先*@
+@using (Html.BeginForm("Order", "Top", FormMethod.Post))
+{
+    <div class=""><input type="submit" value="発注先" id="" name="" /></div>
+    <div class="cls"></div>
+}
+
+@*商品マスター*@
+@Html.Partial("ProductBlock")
+
+@*取引先マスター*@
+@Html.Partial("CustomerBlock")

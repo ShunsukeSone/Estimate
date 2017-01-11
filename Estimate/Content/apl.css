@@ -1,0 +1,14 @@
+﻿/*CSS*/
+
+.cls{
+    clear:both;
+}
+
+.text{
+    float:left;
+}
+
+.textright{
+    margin-left:auto;
+    float:left;
+}

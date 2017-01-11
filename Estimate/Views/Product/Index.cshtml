@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
+
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+    <h4 class="text">商品マスタ検索</h4>
+    <div class="" align="right">
+        <script language="JavaScript">
+                myD       = new Date();
+
+                myYear    = myD.getYear()
+                myYear4   = (myYear < 2000) ? myYear+1900 : myYear;
+                myMonth   = myD.getMonth() + 1;
+                myDate    = myD.getDate();
+
+                myMess1   = myYear4 + "年" + myMonth + "月" + myDate + "日";
+                myMess    = myMess1 + " " ;
+                document.write( myMess );
+
+        </script>
+    </div>
+
+    <div class="" align="right">
+        <input type="text" id="" name="" placeholder="商品コード・名前を入力" />
+        <input type="submit" value="検索" id="" name="" />
+    </div>
+</div>
+
+<div class="">
+    <div class="text">
+        @*JANCD*@
+        <div class="">
+            <div class="text">JANCD</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class="cls"></div>
+        </div>
+
+        @*商品名*@
+        <div class="">
+            <div class="text">商品名</div>
+            <div class=""><input type="text" id="" name="" /></div>
+            <div class="cls"></div>
+        </div>
+
+        @*カタカナ名*@
+        <div class="">
+            <div class="text">カタカナ名</div>
+            <div class=""><input type="text" id="" name="" /></div>
+            <div class="cls"></div>
+        </div>
+
+
+        @*メーカーCD*@
+        <div class="">
+            <div class="text">メーカーCD</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class=""><input type="text" id="" name="" /></div>
+            <div class="cls"></div>
+        </div>
+
+        @*仕入先CD*@
+        <div class="">
+            <div class="text">仕入先CD</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class=""><input type="text" id="" name="" /></div>
+            <div class="cls"></div>
+        </div>
+
+        @*発注先CD*@
+        <div class="">
+            <div class="text">発注先CD</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class=""><input type="text" id="" name="" /></div>
+            <div class="cls"></div>
+        </div>
+    </div>
+
+    <div class="" align="right">
+        <div class="text">登録日</div>
+        <div class=""><input type="text" id="" name="" /></div>
+        @*<div class=""><textarea name="" cols="30" rows="5"></textarea></div>*@
+    </div>
+</div>
+<div class="cls"></div>
+
+<div class="">
+    @*最大区分*@
+    <div class="text" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+        <div class="">最大</div>
+        <div class="">
+            <div class="text">区分</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">規格</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">単位</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">係数</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">入数</div>
+            <div class=""><input type="text" id="" name="" /></div>
+        </div>
+    </div>
+
+    @*中間区分*@
+    <div class="text" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+        <div class="">中間</div>
+        <div class="">
+            <div class="text">区分</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">規格</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">単位</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">係数</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">入数</div>
+            <div class=""><input type="text" id="" name="" /></div>
+        </div>
+    </div>
+
+    @*最小区分*@
+    <div class="text" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+        <div class="">最小</div>
+        <div class="">
+            <div class="text">区分</div>
+            <div class="text"><input type="text" id="" name="" /></div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">規格</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">単位</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">係数</div>
+            <div class=""><input type="text" id="" name="" /></div>
+
+            <div class="text">入数</div>
+            <div class=""><input type="text" id="" name="" /></div>
+        </div>
+        
+    </div>
+    <div class="cls"></div>
+</div>
+
+@**@
+<div class="">
+    <div class="text">
+        <div class="text">賞味期限</div>
+        <div class=""><input type="text" id="" name="" size="5"/>日間</div>
+    </div>
+
+    <div class="">
+        <div class="text">販売期限日</div>
+        <div class=""><input type="text" id="" name="" /></div>
+        <div class="cls"></div>
+    </div>
+
+
+    <div class="text">
+        <div class="text">仕入単価</div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+    <div class="">
+        <div class="text">単価変更日</div>
+        <div class=""><input type="text" id="" name="" /></div>
+        <div class="cls"></div>
+    </div>
+
+    <div class="">
+        <div class="text">変更前単価(旧単価)</div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+</div>
+
+@*備考欄*@
+<div class="">
+    <div class="text">備考</div>
+    <div class=""><textarea name="" cols="30" rows="5"></textarea></div>
+    <div class="cls"></div>
+</div>

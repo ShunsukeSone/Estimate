@@ -1,0 +1,38 @@
+﻿@{
+    var _model = ViewBag.Details as Estimate.Models.SupplierResult;
+}
+
+<link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
+
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+    <h4 class="text">仕入先マスタ検索</h4>
+    <div class="" align="right">
+        <script language="JavaScript">
+                myD       = new Date();
+
+                myYear    = myD.getYear()
+                myYear4   = (myYear < 2000) ? myYear+1900 : myYear;
+                myMonth   = myD.getMonth() + 1;
+                myDate    = myD.getDate();
+
+                myMess1   = myYear4 + "年" + myMonth + "月" + myDate + "日";
+                myMess    = myMess1 + " " ;
+                document.write( myMess );
+            
+        </script>
+    </div>
+
+@using (Ajax.BeginForm("Search", "Supplier", 
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "Result" }))
+{
+    <div class="" align="right">
+        <input type="text" id="Code" name="Code" placeholder="仕入先コード・名前を入力" />
+        <input type="submit" value="検索" id="" name="" />
+    </div>
+}
+
+</div>
+
+<div id="Result">@Html.Partial("Detail", @_model)</div>
+
+
