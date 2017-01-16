@@ -3,6 +3,9 @@
 }
 
 <link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
 
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
     <h4 class="text">仕入先マスタ検索</h4>
@@ -33,6 +36,6 @@
 
 </div>
 
-<div id="Result">@Html.Partial("Detail", @_model)</div>
+<div id="Result"></div>
 
 

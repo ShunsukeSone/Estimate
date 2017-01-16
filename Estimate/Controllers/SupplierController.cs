@@ -34,7 +34,15 @@ namespace Estimate.Controllers
                     _li = new SupplierResult()
                     {
                         Name1 = _result.仕入先名1,
-                        Name2 = _result.仕入先名2
+                        Name2 = _result.仕入先名2,
+                        Ryakusyou = _result.仕入先略称,
+                        Kana = _result.カタカナ名,
+                        Zip = _result.郵便番号,
+                        Address1 = _result.住所1,
+                        Address2 = _result.住所2,
+                        TEL = _result.電話番号,
+                        FAX = _result.FAX番号,
+                        Notes = _result.備考
                     };
                 }
                 catch { }
