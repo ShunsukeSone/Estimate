@@ -7,6 +7,15 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
+@*戻るボタン*@
+@using (Html.BeginForm("Index", "Top", FormMethod.Post))
+{
+    <div class="">
+        <div class=""><input type="submit" value="戻る" id="" name="" /></div>
+        <div class="cls"></div>
+    </div>
+}
+
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
     <h4 class="text">発注先マスタ検索</h4>
     <div class="" align="right">
@@ -37,5 +46,4 @@
 </div>
 
 <div id="Result"></div>
-
 

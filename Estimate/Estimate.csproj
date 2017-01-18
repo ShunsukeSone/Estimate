@@ -184,11 +184,7 @@
     <Content Include="Views\Estimate\Confirm.cshtml" />
     <Content Include="Views\Estimate\Complete.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Confirm.cshtml" />
-    <Content Include="Views\Customer\Complete.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\Confirm.cshtml" />
-    <Content Include="Views\Product\Complete.cshtml" />
     <Content Include="Views\Shared\UserBlock.cshtml" />
     <Content Include="Views\Shared\EstimateBlock.cshtml" />
     <Content Include="Views\Shared\CustomerBlock.cshtml" />

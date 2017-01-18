@@ -7,6 +7,7 @@ namespace Estimate.Models
 {
     public class SupplierResult
     {
+        public string CD { get; set; }
         public string Name1 { get; set; }
         public string Name2 { get; set; }
         public string Ryakusyou { get; set; }
@@ -20,10 +21,11 @@ namespace Estimate.Models
 
         //コンストラクター
         public SupplierResult() { }
-        public SupplierResult(string _Name1, string _Name2, string _Ryakusyou,
+        public SupplierResult(string _CD, string _Name1, string _Name2, string _Ryakusyou,
             string _Kana, string _Zip, string _Address1, string _Address2,
             string _TEL, string _FAX, string _Notes)
         {
+            this.CD = _CD;
             this.Name1 = _Name1;
             this.Name2 = _Name2;
             this.Ryakusyou = _Ryakusyou;

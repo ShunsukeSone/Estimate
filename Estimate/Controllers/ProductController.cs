@@ -29,6 +29,7 @@ namespace Estimate.Controllers
 
                     _ = new ProductResult()
                     {
+                        JANCD = _result.JANCD,
                         Product_Name = _result.商品名,
                         Kana = _result.カタカナ名,
                         Maker_CD = _result.メーカーCD,
@@ -61,19 +62,6 @@ namespace Estimate.Controllers
                 catch { }
                 return PartialView("Detail", _);
             }
-
         }
-
-        //public ActionResult CONFIRM(FormCollection _FormCollction)
-        //{
-        //    return View();
-
-        //}
-
-        //public ActionResult COMPLETE()
-        //{
-        //    return View();
-        //}
-
     }
 }

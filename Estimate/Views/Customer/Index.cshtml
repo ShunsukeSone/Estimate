@@ -7,9 +7,21 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
+@*戻るボタン*@
+<div class="">
+    <div class=""><input type="button" value="戻る" id="" name="" onclick="history.back()" /></div>
+    <div class="cls"></div>
+</div>
+
+
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
     <h4 class="text">得意先マスタ検索</h4>
     <div class="" align="right">
+        @{ 
+            var _today = DateTime.Now;
+        }
+        @_today.ToString("yyyy年MM月dd日")
+<!--
         <script language="JavaScript">
                 myD       = new Date();
 
@@ -23,6 +35,7 @@
                 document.write( myMess );
 
         </script>
+-->
     </div>
 
 @using (Ajax.BeginForm("Search", "Customer",

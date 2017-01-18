@@ -5,28 +5,28 @@
         @*JANCD*@
         <div class="">
             <div class="text">JANCD</div>
-            <div class="text"><input type="text" id="" name="" /></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.JANCD" readonly="" /></div>
             <div class="cls"></div>
         </div>
 
         @*商品名*@
         <div class="">
             <div class="text">商品名</div>
-            <div class=""><input type="text" id="" name="" value="@Model.Product_Name"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.Product_Name" readonly="" /></div>
             <div class="cls"></div>
         </div>
 
         @*カタカナ名*@
         <div class="">
             <div class="text">カタカナ名</div>
-            <div class=""><input type="text" id="" name="" value="@Model.Kana"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.Kana" readonly="" /></div>
             <div class="cls"></div>
         </div>
 
         @*メーカーCD*@
         <div class="">
             <div class="text">メーカーCD</div>
-            <div class="text"><input type="text" id="" name="" value="@Model.Maker_CD"/></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.Maker_CD" readonly="" /></div>
             <div class=""><input type="text" id="" name="" /></div>
             <div class="cls"></div>
         </div>
@@ -34,7 +34,7 @@
         @*仕入先CD*@
         <div class="">
             <div class="text">仕入先CD</div>
-            <div class="text"><input type="text" id="" name="" value="@Model.Supplier_CD"/></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.Supplier_CD" readonly="" /></div>
             <div class=""><input type="text" id="" name="" /></div>
             <div class="cls"></div>
         </div>
@@ -42,7 +42,7 @@
         @*発注先CD*@
         <div class="">
             <div class="text">発注先CD</div>
-            <div class="text"><input type="text" id="" name="" value="@Model.Order_CD"/></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.Order_CD" readonly="" /></div>
             <div class=""><input type="text" id="" name="" /></div>
             <div class="cls"></div>
         </div>
@@ -50,8 +50,8 @@
 
     <div class="" align="right">
         <div class="text">登録日</div>
-        <div class=""><input type="text" id="" name="" value="@Model.RegistDay"/></div>
-        @*<div class=""><textarea name="" cols="30" rows="5"></textarea></div>*@
+        <div class=""><input type="text" id="" name="" value="@Model.RegistDay" readonly="" /></div>
+        @*<div class=""><textarea name="" cols="30" rows="5" readonly="" ></textarea></div>*@
     </div>
 </div>
 <div class="cls"></div>
@@ -62,20 +62,20 @@
         <div class="">最大</div>
         <div class="">
             <div class="text">区分</div>
-            <div class="text"><input type="text" id="" name="" value="@Model.MAX_Kubun"/></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.MAX_Kubun" readonly="" /></div>
             <div class=""><input type="text" id="" name="" /></div>
 
             <div class="text">規格</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MAX_Kikaku"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MAX_Kikaku" readonly="" /></div>
 
             <div class="text">単位</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MAX_Tanni"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MAX_Tanni" readonly="" /></div>
 
             <div class="text">係数</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MAX_Keisu"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MAX_Keisu" readonly="" /></div>
 
             <div class="text">入数</div>
-            <div class=""><input type="text" id="" name="" @Model.MAX_Nyusu/></div>
+            <div class=""><input type="text" id="" name="" @Model.MAX_Nyusu readonly="" /></div>
         </div>
     </div>
 
@@ -84,20 +84,20 @@
         <div class="">中間</div>
         <div class="">
             <div class="text">区分</div>
-            <div class="text"><input type="text" id="" name="" value="@Model.MID_Kubun"/></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.MID_Kubun" readonly="" /></div>
             <div class=""><input type="text" id="" name="" /></div>
 
             <div class="text">規格</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MID_Kikaku"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MID_Kikaku" readonly="" /></div>
 
             <div class="text">単位</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MID_Tanni"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MID_Tanni" readonly="" /></div>
 
             <div class="text">係数</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MID_Keisu"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MID_Keisu" readonly="" /></div>
 
             <div class="text">入数</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MID_Nyusu"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MID_Nyusu" readonly="" /></div>
         </div>
     </div>
 
@@ -106,20 +106,20 @@
         <div class="">最小</div>
         <div class="">
             <div class="text">区分</div>
-            <div class="text"><input type="text" id="" name="" value="@Model.MIN_Kubun"/></div>
+            <div class="text"><input type="text" id="" name="" value="@Model.MIN_Kubun" readonly="" /></div>
             <div class=""><input type="text" id="" name="" /></div>
 
             <div class="text">規格</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MIN_Kikaku"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MIN_Kikaku" readonly="" /></div>
 
             <div class="text">単位</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MIN_Tanni"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MIN_Tanni" readonly="" /></div>
 
             <div class="text">係数</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MIN_Keisu"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MIN_Keisu" readonly="" /></div>
 
             <div class="text">入数</div>
-            <div class=""><input type="text" id="" name="" value="@Model.MIN_Nyusu"/></div>
+            <div class=""><input type="text" id="" name="" value="@Model.MIN_Nyusu" readonly="" /></div>
         </div>
 
     </div>
@@ -130,30 +130,30 @@
 <div class="">
     <div class="text">
         <div class="text">賞味期限</div>
-        <div class=""><input type="text" id="" name="" size="5" value="@Model.ExpirationDay"/>日間</div>
+        <div class=""><input type="text" id="" name="" size="5" value="@Model.ExpirationDay" readonly="" />日間</div>
     </div>
 
     <div class="">
         <div class="text">販売期限日</div>
-        <div class=""><input type="text" id="" name="" value="@Model.SellDay"/></div>
+        <div class=""><input type="text" id="" name="" value="@Model.SellDay" readonly="" /></div>
         <div class="cls"></div>
     </div>
 
 
     <div class="text">
         <div class="text">仕入単価</div>
-        <div class=""><input type="text" id="" name="" value="@Model.Purchase_Tanka"/></div>
+        <div class=""><input type="text" id="" name="" value="@Model.Purchase_Tanka" readonly="" /></div>
     </div>
 
     <div class="">
         <div class="text">単価変更日</div>
-        <div class=""><input type="text" id="" name="" value="@Model.ChangeDay"/></div>
+        <div class=""><input type="text" id="" name="" value="@Model.ChangeDay" readonly="" /></div>
         <div class="cls"></div>
     </div>
 
     <div class="">
         <div class="text">変更前単価(旧単価)</div>
-        <div class=""><input type="text" id="" name="" value="@Model.Change_Tanka"/></div>
+        <div class=""><input type="text" id="" name="" value="@Model.Change_Tanka" readonly="" /></div>
     </div>
 
 </div>
@@ -161,7 +161,7 @@
 @*備考欄*@
 <div class="">
     <div class="text">備考</div>
-    <div class=""><textarea name="" cols="30" rows="5" value="@Model.Notes"></textarea></div>
+    <div class=""><textarea name="" cols="30" rows="5" value="@Model.Notes" readonly="" ></textarea></div>
     <div class="cls"></div>
 </div>
 

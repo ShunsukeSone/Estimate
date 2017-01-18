@@ -7,6 +7,7 @@ namespace Estimate.Models
 {
     public class CustomerResult
     {
+        public string CustomerCD { get; set; }              /*得意先CD*/
         public string CustemerName1 { get; set; }           /*得意先名1 */
         public string CustemerName2 { get; set; }           /*得意先名2 */
         public string Ryakusyou { get; set; }               /*得意先略称 */

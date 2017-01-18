@@ -28,6 +28,7 @@ namespace Estimate.Controllers
 
                     _ = new M発注先()
                     {
+                        発注先親CD = _result.発注先親CD,
                         発注先名1 = _result.発注先名1,
                         発注先名2 = _result.発注先名2,
                         発注先略称 = _result.発注先略称,

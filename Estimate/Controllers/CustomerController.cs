@@ -31,6 +31,7 @@ namespace Estimate.Controllers
 
                     _ = new CustomerResult()
                     {
+                        CustomerCD = _result.得意先親CD,
                         CustemerName1 = _result.得意先名1,
                         CustemerName2 = _result.得意先名2,
                         Ryakusyou =_result.得意先略称,
@@ -81,17 +82,6 @@ namespace Estimate.Controllers
 
                 return PartialView("Detail", _);
             }             
-        }
-
-        public ActionResult CONFIRM(FormCollection _FormCollection)
-        {
-            return View();
-
-        }
-
-        public ActionResult COMPLETE()
-        {
-            return View();
         }
 
     }

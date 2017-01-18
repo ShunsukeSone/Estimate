@@ -33,6 +33,7 @@ namespace Estimate.Controllers
 
                     _li = new SupplierResult()
                     {
+                        CD = _result.仕入先親CD,
                         Name1 = _result.仕入先名1,
                         Name2 = _result.仕入先名2,
                         Ryakusyou = _result.仕入先略称,
