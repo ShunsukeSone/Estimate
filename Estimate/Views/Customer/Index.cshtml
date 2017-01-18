@@ -8,10 +8,13 @@
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
 @*戻るボタン*@
-<div class="">
-    <div class=""><input type="button" value="戻る" id="" name="" onclick="history.back()" /></div>
-    <div class="cls"></div>
-</div>
+@using (Html.BeginForm("Index", "Top", FormMethod.Post))
+{
+    <div class="">
+        <div class=""><input type="submit" value="戻る" id="" name="" /></div>
+        <div class="cls"></div>
+    </div>
+}
 
 
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
