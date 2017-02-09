@@ -1,0 +1,49 @@
+﻿
+@{
+    var _model = ViewBag.Details as M発注先;
+}
+
+<link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+@*戻るボタン*@
+@using (Html.BeginForm("Index", "Top", FormMethod.Post))
+{
+    <div class="">
+        <div class=""><input type="submit" value="戻る" id="" name="" /></div>
+        <div class="cls"></div>
+    </div>
+}
+
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+    <h4 class="text">発注先マスタ検索</h4>
+    <div class="" align="right">
+        <script language="JavaScript">
+                myD       = new Date();
+
+                myYear    = myD.getYear()
+                myYear4   = (myYear < 2000) ? myYear+1900 : myYear;
+                myMonth   = myD.getMonth() + 1;
+                myDate    = myD.getDate();
+
+                myMess1   = myYear4 + "年" + myMonth + "月" + myDate + "日";
+                myMess    = myMess1 + " " ;
+                document.write( myMess );
+
+        </script>
+    </div>
+
+@using (Ajax.BeginForm("Search", "Order",
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "Result" }))
+{
+    <div class="" align="right">
+        <input type="text" id="Code" name="Code" placeholder="発注先コード・名前を入力" />
+        <input type="submit" value="検索" id="" name="" />
+    </div>
+}
+
+</div>
+
+<div id="Result"></div>
+

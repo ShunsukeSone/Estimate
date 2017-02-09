@@ -1,13 +1,140 @@
 ﻿/*CSS*/
 
-.cls{
+    .cls{
     clear:both;
-}
+        }
 
-.text{
+    .text{
     float:left;
-}
+    }
 
-.textright{
+    /*.textright{
     margin-left:auto;
-}
+    }*/
+
+
+    .textarea{
+        margin-left: 10px;
+        margin-top: 10px; 
+        width: 530px;
+    }
+
+
+    .textwidth1{
+        width:400px;
+        margin-left:15px;
+    }
+
+	/*.text_width2 {
+		width: 670px;
+		height:34px;
+        border:none;
+	
+
+	.text_width3 {
+		width: 99px;
+		height: 34px;
+	}
+
+	.text_width4 {
+		width: 169px;
+		height: 34px;
+	}*/
+
+	.result {
+		width: 170px;
+		height: 36px;
+        border-right: 1px solid;
+	}
+
+	.width270 {
+		width: 270px;
+	}
+
+	.width171 {
+		width: 171px;
+	}
+     
+	.bor {
+        border-top: 1px solid;
+        border-right: 1px solid;
+        border-left:1px solid;
+	}
+
+    .bor2 {
+        border-top: 1px solid;
+        border-right: 1px solid;
+    }
+    bor3{
+        border-left:1px solid;
+        border-right:1px solid;
+        border-bottom:1px solid;
+    }
+
+	.header0{
+		height: 35px;
+		width: 699px;
+		border-left: 1px solid;                  
+	}
+
+	.header1{
+		height: 35px;
+        border-left: 1px solid;	       
+       	text-align: center;
+		vertical-align: text-bottom;      
+	}
+
+    .header1-2{
+		height: 35px;
+        border-left: 1px solid;	        
+        text-align: center;
+		vertical-align: text-bottom;      
+	}
+
+    .header2{
+        height: 35px;
+        border-right: 1px solid;
+        border-left: 1px solid;     
+        text-align: center;
+		vertical-align: text-bottom;
+    }
+
+    .header3 {
+        height: 35px;
+        border-right: 1px solid;
+        border-top: 1px solid;	
+        border-bottom: 1px solid;
+      	text-align: center;
+		vertical-align: text-bottom;
+    }
+
+	.seq {
+		width: 30px;
+		height: 35px;
+		border-left: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+		text-align: center;
+		vertical-align: central;
+	}
+
+    .seq2 {
+		width: 30px;
+		height: 35px;
+		border: solid 1px; 
+		text-align: center;
+		vertical-align: central;       
+	}
+    
+	.ele {
+		margin-bottom: 5px;
+	}
+
+	.arign_right {
+		text-align: right;
+	}
+
+	.margin_left {
+		margin-left: 15px;
+	}
+      

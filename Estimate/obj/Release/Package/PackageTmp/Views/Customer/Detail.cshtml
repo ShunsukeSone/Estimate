@@ -1,0 +1,280 @@
+﻿@model Estimate.Models.CustomerResult
+
+
+<div class="">
+    @*得意先CD*@
+    <div class="">
+        <div class="text">得意先CD</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.CustomerCD" readonly="" /></div>
+        <div class="cls"></div>
+    </div>
+
+    @*得意先1*@
+    <div class="">
+        <div class="text">得意先名1</div>
+        <div class=""><input type="text" id="" name="" value="@Model.CustemerName1" readonly="" /></div>
+    </div>
+
+    @*得意先2*@
+    <div class="">
+        <div class="text">得意先名2</div>
+        <div class=""><input type="text" id="" name="" value="@Model.CustemerName2" readonly="" /></div>
+    </div>
+
+    @*住所*@
+    <div class="">
+        <div class="text">郵便番号</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Zip" readonly="" /></div>
+        <div class="cls"></div>
+
+        <div class="text">住所1</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Address1" readonly="" /></div>
+        <div class="cls"></div>
+
+        <div class="text">住所2</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Address2" readonly="" /></div>
+        <div class="cls"></div>
+    </div>
+
+    @*電話番号*@
+    <div class="">
+        <div class="text">電話番号</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.TEL" readonly="" /></div>
+    </div>
+
+    @*FAX番号*@
+    <div class="">
+        <div class="text">FAX番号</div>
+        <div class=""><input type="text" id="" name="" value="@Model.FAX" readonly="" /></div>
+    </div>
+
+    @*得意先略称*@
+    <div class="">
+        <div class="text">得意先略称</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Ryakusyou" readonly="" /></div>
+    </div>
+
+    @*カタカナ名*@
+    <div class="">
+        <div class="text">カタカナ名</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Kana" readonly="" /></div>
+    </div>
+</div>
+
+<div class="">
+    @*請求先CD*@
+    <div class="text">請求先CD</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Bill_CD" readonly="" /></div>
+    <div class="cls"></div>
+
+    @*請求先名1*@
+    <div class="text">請求先名1</div>
+    <div class=""><input type="text" id="" name="" value="@Model.Bill_Name1" readonly="" /></div>
+
+    @*請求先名2*@
+    <div class="text">請求先名2</div>
+    <div class=""><input type="text" id="" name="" value="@Model.Bill_Name2" readonly="" /></div>
+
+    @*住所*@
+    <div class="text">請求先郵便番号</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Bill_Zip" readonly="" /></div>
+    <div class="cls"></div>
+
+    <div class="text">請求先住所1</div>
+    <div class=""><input type="text" id="" name="" value="@Model.Bill_Address1" readonly="" /></div>
+    <div class="cls"></div>
+
+    <div class="text">請求先住所2</div>
+    <div class=""><input type="text" id="" name="" value="@Model.Bill_Address2" readonly="" /></div>
+    <div class="cls"></div>
+
+    @*請求先電話番号*@
+    <div class="text">請求先電話番号</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Bill_TEL" readonly="" /></div>
+
+    @*請求先FAX番号*@
+    <div class="text">請求先FAX番号</div>
+    <div class=""><input type="text" id="" name="" value="@Model.Bill_FAX" readonly="" /></div>
+    <div class="cls"></div>
+
+    @*請求書区分*@
+    <div class="text">請求書区分</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Bill_Kubun" readonly="" /></div>
+    <div class=""><input type="text" id="" name="" /></div>
+
+    @*請求書種別*@
+    <div class="text">請求書種別</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Bill_Kind" readonly="" /></div>
+    <div class=""><input type="text" id="" name="" /></div>
+</div>
+
+
+<div class="text">
+    @*消費税区分1*@
+    <div class="text">消費税区分1</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Tax_Kubun1" readonly="" /></div>
+    <div class=""><input type="text" id="" name="" /></div>
+
+    @*消費税区分2*@
+    <div class="text">消費税区分2</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Tax_Kubun2" readonly="" /></div>
+    <div class=""><input type="text" id="" name="" /></div>
+
+    @*消費税区分3*@
+    <div class="text">消費税区分3</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Tax_Kubun3" readonly="" /></div>
+    <div class=""><input type="text" id="" name="" /></div>
+
+    @*不良債権区分*@
+    <div class="text">不良債権区分</div>
+    <div class="text"><input type="text" id="" name="" value="@Model.Bad_Dabt_Kubun" readonly="" /></div>
+    <div class=""><input type="text" id="" name="" /></div>
+</div>
+
+<div class="">
+    @*1回目*@
+    <div class="text" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+        <div class="">1回目</div>
+        <div class="">
+            <div class="text">請求締日1</div>
+            <div class="text"><input type="text" id="" name="" value="@Model.Bill_Close_Day1" readonly="" /></div>
+            <div class="cls"></div>
+
+            <div class="text">集金区分1</div>
+            <div class=""><input type="text" id="" name="" value="@Model.Money_Collect_Kubun1" readonly="" /></div>
+
+            <div class="text">集金日1</div>
+            <div class=""><input type="text" id="" name="" value="@Model.Money_Collect_Day1" readonly="" /></div>
+
+        </div>
+    </div>
+
+    @*2回目*@
+    <div class="text" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+        <div class="">2回目</div>
+        <div class="">
+            <div class="text">請求締日2</div>
+            <div class="text"><input type="text" id="" name="" value="@Model.Bill_Close_Day2" readonly="" /></div>
+            <div class="cls"></div>
+
+            <div class="text">集金区分2</div>
+            <div class=""><input type="text" id="" name="" value="@Model.Money_Collect_Kubun2" readonly="" /></div>
+
+            <div class="text">集金日2</div>
+            <div class=""><input type="text" id="" name="" value="@Model.Money_Collect_Day2" readonly="" /></div>
+
+        </div>
+    </div>
+    <div class="cls"></div>
+</div>
+
+<div class="text">
+    @*営業担当者CD*@
+    <div class="">
+        <div class="text">営業担当者CD</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Sales_Tantou_CD" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+    @*開発担当者CD*@
+    <div class="">
+        <div class="text">開発担当者CD</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Deve_Tantou_CD" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+    @*配達区分*@
+    <div class="">
+        <div class="text">配達区分</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Delivery_kubun" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+    @*納品日*@
+    <div class="">
+        <div class="text">納品日</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Delivery_Day_Sign" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" value="@Model.Delivery_Day" readonly="" /></div>
+    </div>
+
+    @*工場区分*@
+    <div class="">
+        <div class="text">工場区分</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Factory_Kubun" readonly="" /></div>
+    </div>
+
+    @*西村便手数料*@
+    <div class="">
+        <div class="text">西村便手数料</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Margin" readonly="" />%</div>
+    </div>
+
+</div>
+
+<div class="text">
+    @*営業担当者部署名*@
+    <div class="">
+        <div class="text">部署名</div>
+        <div class=""><input type="text" id="" name="" readonly="" /></div>
+    </div>
+
+    @*開発担当者部署名*@
+    <div class="">
+        <div class="text">部署名</div>
+        <div class=""><input type="text" id="" name="" readonly="" /></div>
+    </div>
+
+    @*ランク*@
+    <div class="">
+        <div class="text">ランク</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Rank" readonly="" /></div>
+    </div>
+
+    @*配送ライン*@
+    <div class="">
+        <div class="text">配送ライン</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Delivery_Line" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+    @*運送便*@
+    <div class="">
+        <div class="text">運送便</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Express" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" /></div>
+    </div>
+
+    @*総額開始日*@
+    <div class="">
+        <div class="text">総額開始日</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Total_Start_Day" readonly="" /></div>
+    </div>
+</div>
+
+<div class="text">
+    @*ピッキング*@
+    <div class="">
+        <div class="text">ピッキング</div>
+        <div class="text"><input type="text" id="" name="" value="@Model.Picking" readonly="" /></div>
+        <div class=""><input type="text" id="" name="" readonly="" /></div>
+    </div>
+
+    @*取引開始日*@
+    <div class="">
+        <div class="text">取引開始日</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Trade_Start_Day" readonly="" /></div>
+    </div>
+
+    @*最新売上日*@
+    <div class="">
+        <div class="text">最新売上日</div>
+        <div class=""><input type="text" id="" name="" value="@Model.Latest_Sell_Day" readonly="" /></div>
+    </div>
+
+    @*備考欄*@
+    <div class="">
+        <div class="text">備考</div>
+        <div class=""><textarea name="" cols="30" rows="5" value="@Model.Notes" readonly="" ></textarea></div>
+        <div class="cls"></div>
+    </div>
+</div>

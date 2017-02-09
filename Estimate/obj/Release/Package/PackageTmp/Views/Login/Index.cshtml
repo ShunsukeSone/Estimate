@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Login</h2>
+
+<link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
+
+@using (Html.BeginForm("LoginCheck", "Login", FormMethod.Post))
+{
+    //ID
+    <div class="ID">
+        <div class="text">ID</div>
+        <div class="text"><input type="text" id="ID" name="ID"></div>
+        <div class="cls"></div>
+    </div>
+    
+    //Password
+    <div class="Password">
+        <div class="text">Password</div>
+        <div class="text"><input type="password" id="Passwd" name="Passwd"></div>
+        <div class="cls"></div>
+    </div>
+
+    <div class=""><input type="submit" value="Go" id="" name="" /></div>
+}

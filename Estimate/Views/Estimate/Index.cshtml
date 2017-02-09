@@ -1,15 +1,333 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{ 
+    List<Estimate.Models.Meisai> Datas = ViewBag.Datas as List<Estimate.Models.Meisai>;
+    var Company = ViewBag.Company as List<Estimate.Models.Estimates> ; 
 }
-
-<h2>Estimate</h2>
+@model Estimate.Models.Estimates
 
 <link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
 
-@using (Html.BeginForm("CONFIRM", "Estimate", FormMethod.Post))
+@*戻るボタン*@
+@using (Html.BeginForm("Index", "Top", FormMethod.Post))
 {
-    <div class=""><input type="submit" value="確認" id="" name="" /></div>
-    <div class="cls"></div>
+    <div class="">
+        <div class=""><input type="submit" value="戻る" id="" name="" /></div>
+        <div class="cls"></div>
+    </div>
 }
 
+@*御見積書*@
+<div class="">
+    <div id="" class="" style="text-align:center;">御見積書</div>
+
+    <div id="" class="arign_right" style="width:1140px;">
+        <div id="" class="">伝票番号<input type="text" id="" class="" name="" value="" style="width:90px; height:17px;"></div>
+    </div>
+
+    @*見積先企業情報*@
+    <div id="" class="text bor" style="width:590px; height:130px;">
+        @*郵便番号*@
+        <div id="" class="ele">
+            <div id="" class="text">〒</div>
+            <div id="" class="text"><input type="text" id="zip" class="zip" name="zip" value="" style="width:70px; height:19px;"></div>
+            @*<div id="" class="text">‐</div>
+            <div id="" class="text"><input type="text" id="zip" class="zip" name="zip" value="" style="width:40px; height:19px;"></div>*@
+            <div id="" class="cls"></div>
+        </div>
+
+        @*都道府県*@
+        <div id="" class="ele">
+            <div id="" class="text"><input type="text" id="pref" class="textwidth1" name="" value="" style=""></div>
+            <div id="" class="cls"></div>
+        </div>
+
+        @*市町村*@
+        <div id="" class="ele">
+            <div id="" class="text"><input type="text" id="city" class="textwidth1" name="" value="" style=""></div>
+            <div id="" class="cls"></div>
+        </div>
+
+        @*住所*@
+        <div id="" class="ele">
+            <div id="" class="text"><input type="text" id="address" class="margin_left" name="" value="" style="width:500px;"></div>
+            <div id="" class="text margin_left">御中</div>
+            <div id="" class="cls"></div>
+        </div>
+    </div>
+    
+    @*自社企業情報*@
+    <div id="" class="text bor2" style="width:550px; height:130px;">
+        @*郵便番号*@
+        <div class="">
+            <div class="text">〒</div>
+            <div class=""><input type="text" id="" class="" value="@Company[0].Estimate_Zip" style="border:none" readonly=""/></div>
+        </div>
+
+        @*都道府県*@
+        <div class="">
+            <div class=""><input type="text" id="" class="" value="大阪府" style="border:none" readonly=""/></div>
+        </div>
+        
+        @*市町村*@
+        <div class="">
+            <div class=""><input type="text" id="" class="" value="箕面市西小路4丁目" style="border:none" readonly=""/></div>
+        </div>
+        
+        @*住所*@
+        <div class="">
+            <div class=""><input type="text" id="" class="" value="10番26-4号" style="border:none" readonly=""/></div>    
+        </div>
+
+        @*会社名*@
+        <div class="">
+            <div class=""><input type="text" id="" class="" value="有限会社アップルパイカンパニー" style="border:none;width:230px" readonly=""/></div>
+        </div>
+
+        @*TEL*@
+        <div class="" >
+            <div class="text">TEL</div>
+            <div class=""><input type="text" id="" class="" value="072-747-8918" style="border:none" readonly=""/></div>
+        </div>
+
+        @*FAX*@
+        <div class="" >
+            <div class="text">FAX</div>
+            <div class=""><input type="text" id="" class="" value="072-747-8918" style="border:none" readonly=""/></div>
+        </div>        
+        
+        @*<textarea id="" class="textarea" name="" rows="5" cols="20" value=""></textarea>*@
+        <div id="" class="cls"></div>
+    </div>
+
+    @*商品明細*@
+    <div id="" class="text" style="">
+        @*合計金額*@
+        <div class="">
+            <div id="" class="text header0" style="border-top: 1px solid;"></div>
+            <div id="" class="text header1 width270" style="border-top:1px solid;">合計金額(税込)</div>
+            <div id="" class="text header2 width171" style="border:1px solid;">
+                <input type="text" id="Tax_Sum" class="arign_right result" name="" value="" style="border:none;width:169px;">
+            </div>
+            <div class="cls"></div>
+
+            <div id="" class="text header0"></div>
+            <div id="" class="text header1 width270" style="border-top:1px solid;">合計金額(税抜)</div>
+            <div id="" class="text header2 width171" style="border:1px solid;">
+                <input type="text" id="Sum" class="arign_right result" name="" value="" style="border:none;width:169px;">
+            </div>
+            <div class="cls"></div>
+
+            <div id="" class="text header0"></div>
+            <div id="" class="text header1-2 width270" style="border-top:1px solid;">消費税額</div>
+            <div id="" class="text header2 width171" style="border:1px solid;">
+                <input type="text" id="Tax" class="arign_right result" name="" value="" style="border:none;width:169px;">
+            </div>
+            <div id="" class="cls"></div>
+        </div>
+
+        <div id="" class="text seq2"></div>
+        <div id="" class="text header3" style="width:670px;">品名</div>
+        <div id="" class="text header3" style="width:100px;">数量</div>
+        <div id="" class="text header3" style="width:170px;">単価</div>
+        <div id="" class="text header3" style="width:170px;">金額</div>
+        <div id="" class="cls"></div>
+
+        @*初期明細行(3行分)*@
+        @Html.Partial("Detail")
+
+        @*明細行追加ボタン*@
+        <div class="" id="mytable" >
+            <div class=""><input type="button" id="addrow" name="" value="+" /></div>
+        </div>
+    </div>
+</div>
+
+@*"?"を入力した行のIDを置く場所*@
+<input type="text" name="CallbackID" id="CallbackID" />
+<input type="text" name="CallbackSuryo" id="CallbackSuryo" />
+<input type="text" name="CallbackTanka" id="CallbackTanka" />
+<input type="text" name="CallbackKingaku" id="CallbackKingaku" />
+
+<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script language="javascript">
+    var No = 3;
+    var Max = 10;
+    
+    var _baseRow = [
+        "<div id='' class='text seq'>#</div>",
+        "<div id='' class='text' style='border-bottom:1px solid;'>",
+        "<input type='text' id='GetValue#' class='GetValue' name='' value='' style='border:none; width:669px; height:34px;'>",
+        "</div>",
+        "<div id='' class='text' style='border-left: 1px solid; border-right: 1px solid; border-bottom:1px solid;'>",
+        "<input type='text' id='Suryo#' class='Suryo' name='' value='' style='border:none;  width:99px; height:34px;'>",
+        "</div>",
+        "<div id='' class='text' style='border-right: 1px solid; border-bottom:1px solid;'>",
+        "<input type='text' id='Tanka#' class='' name='' value='' style='border:none; width:169px; height:34px;' readonly=''>",
+        "</div>",
+        "<div id='' class='text' style='border-right: 1px solid; border-bottom:1px solid;'>",
+        "<input type='text' id='Kingaku#' class='Kingaku' name='' value='' style='border:none; width:169px; height:34px;' readonly=''>",
+        "</div>",
+        "<div id='' class='cls'></div>",
+    ];
+
+    @*Seqの＋をクリックすると明細行追加*@
+    $(document).ready(function () {
+        var addRow;
+        addRow = function () {
+            No++;
+
+            var _t = "";
+            for (var i = 0; i < _baseRow.length ; i++) _t += _baseRow[i];           //_baseRowの配列部分をすべて読み込み
+            _t = _t.replace(/\#/g, No);                                             //#をNoに置き換え
+
+            $('#mytable').before(_t);
+        }
+        $('#addrow').on('click', function () {
+            addRow();
+
+            if (No >= Max) {
+                $('#addrow').prop("disabled", true);
+            }
+        });
+    })
+
+    @*品名の欄に"?"を入れるとサブウィンドウを表示(3行まで)*@
+    //$(function () {
+    //    $('input.GetValue').keyup(function () {
+    //        var _ = document.getElementsByName("GetValue").value;
+    //        if (_ == "?") {
+    //            window.open("http://www.yahoo.co.jp", "", "width = 600,height = 500");
+    //            return false;
+    //        }
+    //    })
+    //});
+
+    $(function () {
+        //$('input.GetValue').keyup(function () {
+        //    var _id = $(this).attr('id');
+        //    //var _Tankaid = document.getElementById("#Tanka").id;
+        //    //var _Suryoid = document.getElementById("#Suryo").id;
+        //    //var _Kingakuid = document.getElementById("#Kingaku");
+        //    ShowSubWindow(_id);
+        //    GetTanka(_Tankaid);
+        //    GetSuryo(_Suryoid);
+        //    GetKingaku(_Kingakuid);
+        //});
+
+        $(document).on("keyup", ".GetValue", function () {
+            var _id = $(this).attr('id').replace("GetValue", "");
+            var SHNid = "GetValue" + _id;
+            //console.log(SHNid);
+
+            //var _Tankaid = document.getElementById("#Tanka").id;
+            //var _Suryoid = document.getElementById("#Suryo").id;
+            //var _Kingakuid = document.getElementById("#Kingaku");
+
+            ShowSubWindow("GetValue" + _id);
+            GetTanka("Tanka" + _id);
+            GetSuryo("Suryo" + _id);
+            GetKingaku("Kingaku" + _id);
+        });
+    });
+
+    function ShowSubWindow(_id) {
+        var _ = document.getElementById(_id).value;
+        if (_ == "?") {
+            $('#CallbackID').val(_id);                                                      //"?"を入力した行のIDを隠しているテキストに入れている
+            window.open("../Product/", "", "width = 600,height = 500");
+
+            $(this).val('');
+            return false;
+        }
+    }
+
+    function GetTanka(_Tankaid) {
+        $('#CallbackTanka').val(_Tankaid)
+    }
+
+    function GetSuryo(_Suryoid) {
+        $('#CallbackSuryo').val(_Suryoid)
+    }
+
+    function GetKingaku(_Kingakuid) {
+        $('#CallbackKingaku').val(_Kingakuid)
+    }
+
+    $(function () {
+        $(document).on("keyup", ".Suryo", function () {
+
+            var _Suryoid = document.getElementById("CallbackSuryo").value;
+            var _Tankaid = document.getElementById("CallbackTanka").value;
+            var _Kingakuid = document.getElementById("CallbackKingaku").value;
+            var numA = document.getElementById(_Suryoid).value;
+            var numB = document.getElementById(_Tankaid).value;
+
+            var _Kingaku = numA * numB;
+
+            //console.log(_Kingaku);
+            document.getElementById(_Kingakuid).value = _Kingaku;
+
+            var _sum = 0;
+
+            $('.Kingaku').each(function () {
+                var point = $(this).val();
+                //console.log("HI" + point);
+                if (parseInt(point) > -1)
+                {
+                    _sum = parseInt(point) + _sum;
+                }
+            })
+            console.log("SUM IS " + _sum);
+            
+            document.getElementById("Sum").value = _sum;
+            document.getElementById("Tax_Sum").value = Math.floor(_sum * 1.08);
+            document.getElementById("Tax").value = Math.floor(_sum * 0.08);
+            })
+    })
+
+    //$('.Kingaku').change(function () {
+    //    var _sum = 0;
+    //    $('.Kingaku').each(function () {
+    //        var point = $(this).val();
+
+    //        console.log("HI" + point);
+    //        if (parseInt(point) > -1) {
+    //            _sum = parseInt(point) + _sum;
+    //        }
+    //    })
+    //})
+
+        //$('input.Suryo').keyup(function () {
+        //    var _Suryoid = document.getElementById("CallbackSuryo").value;
+        //    var _Tankaid = document.getElementById("CallbackTanka").value;
+        //    var _Kingakuid = document.getElementById("CallbackKingaku").value;
+        //    var numA = document.getElementById(_Suryoid).val();
+        //    var numB = document.getElementById(_Tankaid).val();
+        //    //parseIntで文字列を数値に
+        //    numA = parseInt(numA);
+        //    numB = parseInt(numB);
+
+        //    $('#Kingaku4').val(numA*numB);
+        //})
+    $(function () {
+        $(".zip").keyup(function () {
+            var ZipCD = document.getElementById("zip").value;
+            console.log(ZipCD);
+
+            //打ち込んだ文字をPHPに送信
+            $.ajax({
+                type: 'POST',
+                url: 'zip.php',
+                data: {
+                    'zip': ZipCD,
+                    //'str': 'abc',
+                    //'num': 123,
+                },
+                //success: function (data) {
+                //    document.getElementById("#pref").value = data;
+                //    alert(data);
+                //}
+            });
+        })
+    });
+</script>

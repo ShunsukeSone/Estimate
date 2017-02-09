@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Estimate" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=HOME;Initial Catalog=Estimate;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EstimateConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.M_Account" Member="M_Account">
+    <Type Name="M_Account">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Passwd" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M仕入先" Member="M仕入先">
+    <Type Name="M仕入先">
+      <Column Name="仕入先親CD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="仕入先子CD" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="仕入先名1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="仕入先名2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="仕入先略称" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="カタカナ名" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="郵便番号" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="住所1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="住所2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="電話番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FAX番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="備考" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="入力担当者CD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="作業場所名" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="プログラムID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="登録端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="登録日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="更新端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="更新日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M商品" Member="M商品">
+    <Type Name="M商品">
+      <Column Name="JANCD" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="商品名" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="カタカナ名" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="メーカーCD" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="仕入先CD" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="発注先CD" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="最大区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="最大規格" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="最大単位" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="最大係数" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="最大入数" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="中間区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="中間規格" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="中間単位" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="中間係数" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="中間入数" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="最小区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="最小規格" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="最小単位" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="最小係数" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="最小入数" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="賞味期間" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="仕入単価" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="単価変更日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="変更前単価" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="販売期限日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="備考" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="入力担当者CD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="作業場所名" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="プログラムID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="登録端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="登録日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="更新端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="更新日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M得意先" Member="M得意先">
+    <Type Name="M得意先">
+      <Column Name="得意先親CD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="得意先子CD" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="得意先名1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="得意先名2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="得意先略称" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="カタカナ名" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="郵便番号" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="住所1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="住所2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="電話番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FAX番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="請求先CD" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="請求先名1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="請求先名2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="請求先郵便番号" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="請求先住所1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="請求先住所2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="請求先電話番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="請求先FAX番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="請求締日1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="集金区分1" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="集金日1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="請求締日2" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="集金区分2" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="集金日2" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="請求書区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="請求書種別" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="消費税区分1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="消費税区分2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="消費税区分3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="不良債権区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="営業担当者CD" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="開設担当者CD" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="配送ライン" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ランク" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="工場区分" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ピッキング区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="配達区分" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="運送便区分" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="納品日数符号" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="納品日数" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="取引開始日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="最新売上日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="前回請求日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="今回請求日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="総額開始日付" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="西村便手数料" Type="System.Decimal" DbType="Decimal(3,1)" CanBeNull="true" />
+      <Column Name="回収区分" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="備考" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="入力担当者CD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="作業場所名" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="プログラムID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="登録端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="登録日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="更新端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="更新日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="請求更新端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="請求更新日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M発注先" Member="M発注先">
+    <Type Name="M発注先">
+      <Column Name="発注先親CD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="発注先子CD" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="発注先名1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="発注先名2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="発注先略称" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="カタカナ名" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="郵便番号" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="住所1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="住所2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="電話番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FAX番号" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="自動FAX番号" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="備考" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="入力担当者CD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="作業場所名" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="プログラムID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="登録端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="登録日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="更新端末名" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="更新日時" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

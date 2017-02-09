@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Estimate.Models;
 
 namespace Estimate.Controllers
 {
@@ -11,18 +12,44 @@ namespace Estimate.Controllers
         // GET: Estimate
         public ActionResult Index()
         {
+            ViewBag.Datas = SampleData();
+            ViewBag.Company = SampleCompany();
             return View();
         }
 
-        public ActionResult CONFIRM(FormCollection _FormCollction)
+        private List<Estimates> SampleCompany()
         {
-            return View();
-
+            List<Estimates> _return = new List<Estimates>()
+            {
+               new Estimates()
+               {
+                Estimate_Zip = 5620004,
+                Estimate_Pref = "大阪府",
+                Estimate_City = "箕面市西小路4丁目",
+                Estimate_Address = "10番26-4号",
+                Estimate_Name = "有限会社アップルパイカンパニー",
+                TEL = "072-747-8918",
+                FAX = "072-747-8918"
+               }
+            };
+            
+            return _return;
         }
 
-        public ActionResult COMPLETE()
+        private List<Meisai> SampleData()
         {
-            return View();
+            List<Meisai> _return = new List<Meisai>();
+            Enumerable.Range(0, 3).ToList().ForEach(x =>
+            {
+                _return.Add(new Meisai()
+                {
+                    Seq = (x + 1).ToString(),
+                    No = (x + 1),
+                    Name = string.Format("品名{0}", (x + 1)),
+                });
+            });
+
+            return _return;
         }
     }
 }
