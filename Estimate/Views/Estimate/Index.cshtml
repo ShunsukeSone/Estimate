@@ -2,7 +2,6 @@
     List<Estimate.Models.Meisai> Datas = ViewBag.Datas as List<Estimate.Models.Meisai>;
     var Company = ViewBag.Company as List<Estimate.Models.Estimates> ; 
 }
-@model Estimate.Models.Estimates
 
 <link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
 
@@ -59,43 +58,44 @@
         @*郵便番号*@
         <div class="">
             <div class="text">〒</div>
-            <div class=""><input type="text" id="" class="" value="@Company[0].Estimate_Zip" style="border:none" readonly=""/></div>
+            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Zip" style="border:none" readonly=""/></div>
         </div>
 
         @*都道府県*@
         <div class="">
-            <div class=""><input type="text" id="" class="" value="大阪府" style="border:none" readonly=""/></div>
+            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Pref" style="border:none" readonly=""/></div>
         </div>
         
         @*市町村*@
         <div class="">
-            <div class=""><input type="text" id="" class="" value="箕面市西小路4丁目" style="border:none" readonly=""/></div>
+            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_City" style="border:none" readonly=""/></div>
         </div>
         
         @*住所*@
         <div class="">
-            <div class=""><input type="text" id="" class="" value="10番26-4号" style="border:none" readonly=""/></div>    
+            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Address" style="border:none" readonly=""/></div>    
         </div>
 
         @*会社名*@
         <div class="">
-            <div class=""><input type="text" id="" class="" value="有限会社アップルパイカンパニー" style="border:none;width:230px" readonly=""/></div>
+            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Name" style="border:none;width:230px" readonly=""/></div>
+            <div id="" class="cls"></div>
         </div>
-
-        @*TEL*@
-        <div class="" >
-            <div class="text">TEL</div>
-            <div class=""><input type="text" id="" class="" value="072-747-8918" style="border:none" readonly=""/></div>
-        </div>
-
-        @*FAX*@
-        <div class="" >
-            <div class="text">FAX</div>
-            <div class=""><input type="text" id="" class="" value="072-747-8918" style="border:none" readonly=""/></div>
-        </div>        
         
-        @*<textarea id="" class="textarea" name="" rows="5" cols="20" value=""></textarea>*@
-        <div id="" class="cls"></div>
+        <div class="" @*align="right"*@>
+            @*TEL*@
+            <div class="text">
+                <div class="text">TEL</div>
+                <div class="text"><input type="text" id="" class="" value="@Company[0].TEL" style="border:none" readonly="" /></div>
+            </div>
+
+            @*FAX*@
+            <div class="">
+                <div class="text">FAX</div>
+                <div class=""><input type="text" id="" class="" value="@Company[0].FAX" style="border:none" readonly="" /></div>
+            </div>
+        </div>
+        @*<div id="" class="cls"></div>*@
     </div>
 
     @*商品明細*@
@@ -142,10 +142,10 @@
 </div>
 
 @*"?"を入力した行のIDを置く場所*@
-<input type="text" name="CallbackID" id="CallbackID" />
-<input type="text" name="CallbackSuryo" id="CallbackSuryo" />
-<input type="text" name="CallbackTanka" id="CallbackTanka" />
-<input type="text" name="CallbackKingaku" id="CallbackKingaku" />
+<input type="hidden" name="CallbackID" id="CallbackID" />
+<input type="hidden" name="CallbackSuryo" id="CallbackSuryo" />
+<input type="hidden" name="CallbackTanka" id="CallbackTanka" />
+<input type="hidden" name="CallbackKingaku" id="CallbackKingaku" />
 
 <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
@@ -264,14 +264,13 @@
 
             var _Kingaku = numA * numB;
 
-            //console.log(_Kingaku);
+          
             document.getElementById(_Kingakuid).value = _Kingaku;
 
             var _sum = 0;
 
             $('.Kingaku').each(function () {
                 var point = $(this).val();
-                //console.log("HI" + point);
                 if (parseInt(point) > -1)
                 {
                     _sum = parseInt(point) + _sum;
@@ -297,18 +296,6 @@
     //    })
     //})
 
-        //$('input.Suryo').keyup(function () {
-        //    var _Suryoid = document.getElementById("CallbackSuryo").value;
-        //    var _Tankaid = document.getElementById("CallbackTanka").value;
-        //    var _Kingakuid = document.getElementById("CallbackKingaku").value;
-        //    var numA = document.getElementById(_Suryoid).val();
-        //    var numB = document.getElementById(_Tankaid).val();
-        //    //parseIntで文字列を数値に
-        //    numA = parseInt(numA);
-        //    numB = parseInt(numB);
-
-        //    $('#Kingaku4').val(numA*numB);
-        //})
     $(function () {
         $(".zip").keyup(function () {
             var ZipCD = document.getElementById("zip").value;
@@ -316,17 +303,17 @@
 
             //打ち込んだ文字をPHPに送信
             $.ajax({
-                type: 'POST',
-                url: 'zip.php',
+                type: 'GET',
+                url: 'http://localhost:61004/api/Values',
                 data: {
                     'zip': ZipCD,
                     //'str': 'abc',
                     //'num': 123,
                 },
-                //success: function (data) {
-                //    document.getElementById("#pref").value = data;
-                //    alert(data);
-                //}
+                success: function (data) {
+                    //document.getElementById("#pref").value = data;
+                    alert(data);
+                }
             });
         })
     });

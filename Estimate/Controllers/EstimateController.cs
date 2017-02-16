@@ -23,11 +23,11 @@ namespace Estimate.Controllers
             {
                new Estimates()
                {
-                Estimate_Zip = 5620004,
-                Estimate_Pref = "大阪府",
-                Estimate_City = "箕面市西小路4丁目",
-                Estimate_Address = "10番26-4号",
-                Estimate_Name = "有限会社アップルパイカンパニー",
+                Comp_Zip = 5620004,
+                Comp_Pref = "大阪府",
+                Comp_City = "箕面市西小路4丁目",
+                Comp_Address = "10番26-4号",
+                Comp_Name = "有限会社アップルパイカンパニー",
                 TEL = "072-747-8918",
                 FAX = "072-747-8918"
                }
