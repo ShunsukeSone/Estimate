@@ -1,6 +1,7 @@
 ﻿@{ 
     List<Estimate.Models.Meisai> Datas = ViewBag.Datas as List<Estimate.Models.Meisai>;
-    var Company = ViewBag.Company as List<Estimate.Models.Estimates> ; 
+    var Company = ViewBag.Company as List<Estimate.Models.Company> ;
+    var _today = DateTime.Now; 
 }
 
 <link rel="stylesheet" href="~/Content/apl.css" type="text/css" />
@@ -8,18 +9,39 @@
 @*戻るボタン*@
 @using (Html.BeginForm("Index", "Top", FormMethod.Post))
 {
-    <div class="">
+    <div class="text">
         <div class=""><input type="submit" value="戻る" id="" name="" /></div>
         <div class="cls"></div>
     </div>
 }
 
+@*登録ボタン*@
+@using (Html.BeginForm("MakeEstimate", "Estimate", FormMethod.Post,new { @id = "hiddenForm" }))
+{
+    <div><input type="submit" value="登録" id="register" class="" name="" /></div>
+    <div>
+        <input type="hidden" id="hiddenNo" name="hiddenNo" />
+        <input type="hidden" id="hiddenZip" name="hiddenZip" />
+        <input type="hidden" id="hiddenPref" name="hiddenPref" />
+        <input type="hidden" id="hiddenCity" name="hiddenCity" />
+        <input type="hidden" id="hiddenName" name="hiddenName" />
+    </div>
+    <div id="meisai">
+        <input type="hidden" id="hiddenItem1" name="hiddenItem1" />
+    </div>
+}
+
+
 @*御見積書*@
 <div class="">
     <div id="" class="" style="text-align:center;">御見積書</div>
 
+    <div class="arign_right">
+        <div class=""><input type="text" value="@_today.ToString("yyyy年MM月dd日")" style="border:none" readonly=""/></div>
+    </div>
+
     <div id="" class="arign_right" style="width:1140px;">
-        <div id="" class="">伝票番号<input type="text" id="" class="" name="" value="" style="width:90px; height:17px;"></div>
+        <div id="" class="">伝票番号<input type="text" id="estimateNo" class="" name="" value="@_today.ToString("yyMMdd-HHmmss-fff")" style="width:150px; height:17px;"></div>
     </div>
 
     @*見積先企業情報*@
@@ -28,26 +50,24 @@
         <div id="" class="ele">
             <div id="" class="text">〒</div>
             <div id="" class="text"><input type="text" id="zip" class="zip" name="zip" value="" style="width:70px; height:19px;"></div>
-            @*<div id="" class="text">‐</div>
-            <div id="" class="text"><input type="text" id="zip" class="zip" name="zip" value="" style="width:40px; height:19px;"></div>*@
             <div id="" class="cls"></div>
         </div>
 
-        @*都道府県*@
+        @*都道府県市町村*@
         <div id="" class="ele">
             <div id="" class="text"><input type="text" id="pref" class="textwidth1" name="" value="" style=""></div>
             <div id="" class="cls"></div>
         </div>
 
-        @*市町村*@
+        @*住所*@
         <div id="" class="ele">
             <div id="" class="text"><input type="text" id="city" class="textwidth1" name="" value="" style=""></div>
             <div id="" class="cls"></div>
         </div>
 
-        @*住所*@
+        @*見積先企業名*@
         <div id="" class="ele">
-            <div id="" class="text"><input type="text" id="address" class="margin_left" name="" value="" style="width:500px;"></div>
+            <div id="" class="text"><input type="text" id="EstimateName" class="margin_left" name="" value="" style="width:500px;"></div>
             <div id="" class="text margin_left">御中</div>
             <div id="" class="cls"></div>
         </div>
@@ -55,54 +75,63 @@
     
     @*自社企業情報*@
     <div id="" class="text bor2" style="width:550px; height:130px;">
-        @*郵便番号*@
-        <div class="">
-            <div class="text">〒</div>
-            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Zip" style="border:none" readonly=""/></div>
-        </div>
-
-        @*都道府県*@
-        <div class="">
-            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Pref" style="border:none" readonly=""/></div>
-        </div>
-        
-        @*市町村*@
-        <div class="">
-            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_City" style="border:none" readonly=""/></div>
-        </div>
-        
-        @*住所*@
-        <div class="">
-            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Address" style="border:none" readonly=""/></div>    
-        </div>
-
-        @*会社名*@
-        <div class="">
-            <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Name" style="border:none;width:230px" readonly=""/></div>
-            <div id="" class="cls"></div>
-        </div>
-        
-        <div class="" @*align="right"*@>
-            @*TEL*@
-            <div class="text">
-                <div class="text">TEL</div>
-                <div class="text"><input type="text" id="" class="" value="@Company[0].TEL" style="border:none" readonly="" /></div>
-            </div>
-
-            @*FAX*@
+        <div class="text">
+            @*郵便番号*@
             <div class="">
-                <div class="text">FAX</div>
-                <div class=""><input type="text" id="" class="" value="@Company[0].FAX" style="border:none" readonly="" /></div>
+                <div class="text">〒</div>
+                <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Zip" style="border:none" readonly="" /></div>
+            </div>
+
+            @*都道府県*@
+            <div class="">
+                <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Pref" style="border:none" readonly="" /></div>
+            </div>
+
+            @*市町村*@
+            <div class="">
+                <div class=""><input type="text" id="" class="" value="@Company[0].Comp_City" style="border:none" readonly="" /></div>
+            </div>
+
+            @*住所*@
+            <div class="">
+                <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Address" style="border:none" readonly="" /></div>
+            </div>
+
+            @*会社名*@
+            <div class="">
+                <div class=""><input type="text" id="" class="" value="@Company[0].Comp_Name" style="border:none;width:230px" readonly="" /></div>
+                <div id="" class="cls"></div>
+            </div>
+
+            <div class="" @*align="right"*@>
+                @*TEL*@
+                <div class="text">
+                    <div class="text">TEL</div>
+                    <div class="text"><input type="text" id="" class="" value="@Company[0].TEL" style="border:none" readonly="" /></div>
+                </div>
+
+                @*FAX*@
+                <div class="text">
+                    <div class="text">FAX</div>
+                    <div class="text"><input type="text" id="" class="" value="@Company[0].FAX" style="border:none" readonly="" /></div>
+                </div>
             </div>
         </div>
-        @*<div id="" class="cls"></div>*@
+
+        @*印鑑部分*@
+        <div class="" align="right"><textarea cols="100" rows="5" style="width:100px;"></textarea></div>
     </div>
 
     @*商品明細*@
     <div id="" class="text" style="">
         @*合計金額*@
         <div class="">
-            <div id="" class="text header0" style="border-top: 1px solid;"></div>
+            <div id="" class="text header0" style="border-top: 1px solid;">
+                    <div class="">納期<input type="text" id="" name="" style="border-top: none; border-bottom:double; border-left: none; border-right: none; "/></div>
+                    <div class="">支払条件<input type="text" id="" name="" style="border-top: none; border-bottom:double; border-left: none; border-right: none; "/></div>
+                    <div class="">見積有効期間<input type="text" id="" name="" style="border-top: none; border-bottom:double; border-left: none; border-right: none; "/></div>
+            </div>
+
             <div id="" class="text header1 width270" style="border-top:1px solid;">合計金額(税込)</div>
             <div id="" class="text header2 width171" style="border:1px solid;">
                 <input type="text" id="Tax_Sum" class="arign_right result" name="" value="" style="border:none;width:169px;">
@@ -141,6 +170,12 @@
     </div>
 </div>
 
+@*備考欄*@
+<div class="">
+    <div class="">[備考]</div>
+    <textarea id="" name="" cols="150" rows="5" ></textarea>
+</div>
+
 @*"?"を入力した行のIDを置く場所*@
 <input type="hidden" name="CallbackID" id="CallbackID" />
 <input type="hidden" name="CallbackSuryo" id="CallbackSuryo" />
@@ -154,20 +189,33 @@
     var Max = 10;
     
     var _baseRow = [
-        "<div id='' class='text seq'>#</div>",
-        "<div id='' class='text' style='border-bottom:1px solid;'>",
-        "<input type='text' id='GetValue#' class='GetValue' name='' value='' style='border:none; width:669px; height:34px;'>",
+        "<div id='' class='text seq' name='Seq'>#</div>",
+        "<div id='' class='text' style='border-bottom:1px solid; width:669px;'>",
+        "<input type='text' id='GetValue#' class='GetValue' name='GetValue' value='' style='border:none; width:669px; height:34px;'>",
         "</div>",
         "<div id='' class='text' style='border-left: 1px solid; border-right: 1px solid; border-bottom:1px solid;'>",
-        "<input type='text' id='Suryo#' class='Suryo' name='' value='' style='border:none;  width:99px; height:34px;'>",
+        "<input type='text' id='Suryo#' class='Suryo' name='Suryo' value='' style='border:none;  width:99px; height:34px;'>",
         "</div>",
         "<div id='' class='text' style='border-right: 1px solid; border-bottom:1px solid;'>",
-        "<input type='text' id='Tanka#' class='' name='' value='' style='border:none; width:169px; height:34px;' readonly=''>",
+        "<input type='text' id='Tanka#' class='Tanka' name='Tanka' value='' style='border:none; width:169px; height:34px;' readonly=''>",
         "</div>",
         "<div id='' class='text' style='border-right: 1px solid; border-bottom:1px solid;'>",
         "<input type='text' id='Kingaku#' class='Kingaku' name='' value='' style='border:none; width:169px; height:34px;' readonly=''>",
         "</div>",
         "<div id='' class='cls'></div>",
+    ];
+
+    var samplerow = [
+               "<div id='' class='text'>",
+               "<input type='hidden' id='!' class='GetValue' name='GetValue' value='#'>",
+               "</div>",
+               "<div id='' class='text'>",
+               "<input type='hidden' id='-' class='Suryo' name='Suryo' value='##' >",
+               "</div>",
+               "<div id='' class='text' >",
+               "<input type='hidden' id='~' class='' name='Tanka' value='###'>",
+               "</div>",
+               "<div id='' class='cls'></div>",
     ];
 
     @*Seqの＋をクリックすると明細行追加*@
@@ -179,7 +227,7 @@
             var _t = "";
             for (var i = 0; i < _baseRow.length ; i++) _t += _baseRow[i];           //_baseRowの配列部分をすべて読み込み
             _t = _t.replace(/\#/g, No);                                             //#をNoに置き換え
-
+            
             $('#mytable').before(_t);
         }
         $('#addrow').on('click', function () {
@@ -203,25 +251,9 @@
     //});
 
     $(function () {
-        //$('input.GetValue').keyup(function () {
-        //    var _id = $(this).attr('id');
-        //    //var _Tankaid = document.getElementById("#Tanka").id;
-        //    //var _Suryoid = document.getElementById("#Suryo").id;
-        //    //var _Kingakuid = document.getElementById("#Kingaku");
-        //    ShowSubWindow(_id);
-        //    GetTanka(_Tankaid);
-        //    GetSuryo(_Suryoid);
-        //    GetKingaku(_Kingakuid);
-        //});
-
         $(document).on("keyup", ".GetValue", function () {
             var _id = $(this).attr('id').replace("GetValue", "");
             var SHNid = "GetValue" + _id;
-            //console.log(SHNid);
-
-            //var _Tankaid = document.getElementById("#Tanka").id;
-            //var _Suryoid = document.getElementById("#Suryo").id;
-            //var _Kingakuid = document.getElementById("#Kingaku");
 
             ShowSubWindow("GetValue" + _id);
             GetTanka("Tanka" + _id);
@@ -255,12 +287,13 @@
 
     $(function () {
         $(document).on("keyup", ".Suryo", function () {
-
-            var _Suryoid = document.getElementById("CallbackSuryo").value;
-            var _Tankaid = document.getElementById("CallbackTanka").value;
-            var _Kingakuid = document.getElementById("CallbackKingaku").value;
-            var numA = document.getElementById(_Suryoid).value;
-            var numB = document.getElementById(_Tankaid).value;
+            var _Itemid = document.getElementById("CallbackID").value;                  //クリックした行の品名のid
+            var _Suryoid = document.getElementById("CallbackSuryo").value;              //クリックした行の数量のid
+            var _Tankaid = document.getElementById("CallbackTanka").value;              //クリックした行の単価のid
+            var _Kingakuid = document.getElementById("CallbackKingaku").value;          //クリックした行の金額のid
+            var item = document.getElementById(_Itemid).value;                          //クリックした行の品名のvalue
+            var numA = document.getElementById(_Suryoid).value;                         //クリックした行の数量のvalue
+            var numB = document.getElementById(_Tankaid).value;                         //クリックした行の単価のvalue
 
             var _Kingaku = numA * numB;
 
@@ -275,13 +308,14 @@
                 {
                     _sum = parseInt(point) + _sum;
                 }
-            })
-            console.log("SUM IS " + _sum);
-            
+            })           
             document.getElementById("Sum").value = _sum;
             document.getElementById("Tax_Sum").value = Math.floor(_sum * 1.08);
             document.getElementById("Tax").value = Math.floor(_sum * 0.08);
-            })
+
+            Check(item, numA, numB, _Itemid, _Suryoid, _Tankaid);
+
+        })
     })
 
     //$('.Kingaku').change(function () {
@@ -295,6 +329,46 @@
     //        }
     //    })
     //})
+    
+    //住所検索WebAPIにアクセス
+    $(function () {
+        $('#EstimateName').keyup(function () {
+            var _ = document.getElementById("EstimateName").value;
+            if (_ == "?") {
+                window.open("../Customer/", "", "width = 600,height = 500");
+                return false;
+            }
+        })
+    })
+
+    //登録ボタンを押すとDBにリストコレクションとして追加
+    $(function () {
+        $('#register').click(function () {
+            var _No = document.getElementById("estimateNo").value;
+            $('#hiddenNo').val(_No);
+
+            var _Zip = document.getElementById("zip").value;
+
+            $('#hiddenZip').val(_Zip);
+
+            var _Pref = document.getElementById("pref").value;
+            $('#hiddenPref').val(_Pref);
+
+            var _City = document.getElementById("city").value;
+            $('#hiddenCity').val(_City);
+
+            var _Name = document.getElementById("EstimateName").value;
+            $('#hiddenName').val(_Name);
+
+           $('.GetValue').clone().appendTo('#meisai').css("display", "none");
+
+           $('.Suryo').clone().appendTo('#meisai').css("display", "none");
+
+           $('.Tanka').clone().appendTo('#meisai').css("display", "none");
+
+            $('#hiddenForm').submit();
+        })
+    })
 
     $(function () {
         $(".zip").keyup(function () {
@@ -303,7 +377,7 @@
 
             //打ち込んだ文字をPHPに送信
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: 'http://192.168.1.112/zip2/api/Values',
                 data: {
                     'zip': ZipCD,
@@ -317,4 +391,24 @@
             });
         })
     });
+
+    function Check(item, suryo, tanka, itemid, suryoid, tankaid) {
+        if (item != null && suryo != null && tanka != null) {
+            var _samplerow = "";
+            for (var i = 0; i < samplerow.length ; i++) _samplerow += samplerow[i];
+            _samplerow = _samplerow.replace(/#/, item).replace(/##/, suryo).replace(/###/, tanka).replace(/!/g, itemid).replace(/-/g, suryoid).replace(/~/g, tankaid);
+
+            console.log(_samplerow)
+
+            AddHiddenRow(_samplerow);
+        }
+    }
+  
+    function AddHiddenRow(_) {
+        var _base = "<input type='hidden' id='hiddenItem$' name='hiddenItem$' />";
+        var _meisai = _base.replace("$", "2");
+        $('#meisai').append(_meisai);
+
+
+    }
 </script>

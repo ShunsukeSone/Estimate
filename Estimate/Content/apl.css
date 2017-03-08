@@ -141,3 +141,10 @@
     .margin_right {
 		margin-left: auto;
 	} 
+
+    .border_bottom{
+        border-top: none;
+        border-bottom:double;
+        border-left: none;
+        border-right: none;
+    }

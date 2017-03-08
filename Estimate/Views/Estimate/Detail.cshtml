@@ -7,15 +7,15 @@
 {
 
     i = i + 1;
-        <div id="" class="text seq">@Html.DisplayFor(model => _.Seq)</div>
-        <div id="" class="text" style="border-bottom:1px solid;">
-            <input type="text" id="GetValue@(i)" @*onkeyup="GetValue();"*@ class="GetValue" name="" value="" style="border:none; width:669px; height:34px;">
+        <div id="" class="text seq" name="Seq">@Html.DisplayFor(model => _.Seq)</div>
+        <div id="" class="text" style="border-bottom:1px solid; width:669px;">
+            <input type="text" id="GetValue@(i)" class="GetValue" name="GetValue" value="" style="border:none; width:669px; height:34px;">
         </div>
         <div id="" class="text" style="border-left: 1px solid; border-right: 1px solid; border-bottom:1px solid;">
-            <input type="text" id="Suryo@(i)" class="Suryo" name="" value="" style="border:none;  width:99px; height:34px;">
+            <input type="text" id="Suryo@(i)" class="Suryo" name="Suryo" value="" style="border:none;  width:99px; height:34px;">
         </div>
         <div id="" class="text" style="border-right: 1px solid; border-bottom:1px solid;">
-            <input type="text" id="Tanka@(i)" class="" name="" value="" style="border:none; width:169px; height:34px;" readonly="">
+            <input type="text" id="Tanka@(i)" class="Tanka" name="Tanka" value="" style="border:none; width:169px; height:34px;" readonly="">
         </div>
         <div id="" class="text" style="border-right: 1px solid; border-bottom:1px solid;">
             <input type="text" id="Kingaku@(i)" class="Kingaku" name="" value="" style="border:none; width:169px; height:34px;" readonly="">

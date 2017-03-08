@@ -10,11 +10,17 @@
 @*戻るボタン*@
 @using (Html.BeginForm("Index", "Top", FormMethod.Post))
 {
-    <div class="">
+    <div class="text">
         <div class=""><input type="submit" value="戻る" id="" name="" /></div>
         <div class="cls"></div>
     </div>
 }
+
+@*閉じるボタン*@
+<div class="">
+    <div class=""><input type="button" value="閉じる" @*onClick="window.close()"*@ id="close" name="" /></div>
+    <div class="cls"></div>
+</div>
 
 
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
@@ -53,3 +59,22 @@
 </div>
 
 <div id="Result"></div>
+
+<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script language="javascript">
+    $(function () {
+        //検索結果を親ウィンドウに渡す
+        $('#close').click(function () {
+            window.opener.document.getElementById("zip").value = document.getElementById("CustemerZip").value;
+            window.opener.document.getElementById("pref").value = document.getElementById("CustemerPref").value;
+            window.opener.document.getElementById("city").value = document.getElementById("CustemerCity").value.replace(/　/g, '');
+            window.opener.document.getElementById("EstimateName").value = document.getElementById("CustemerName").value;
+
+            window.close();
+            //return false;
+        })
+    });
+
+</script>
+
+
